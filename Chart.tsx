@@ -22,14 +22,8 @@ class GanttChart extends Component {
       .tickFormat(tickFormat);
     gantt(tasks);
     const svg = d3.select('.chart'); // select plot area
+    console.log(svg.style('width'));
     const data = [12, 5, 6, 6, 9, 10];
-    svg
-      .selectAll('rect')
-      .data(data)
-      .enter()
-      .append('line')
-      .attr('x', this.props.width / 2)
-      .attr('y', this.props.height);
     svg
       .selectAll('rect')
       .data(data)

@@ -1,14 +1,8 @@
-{
-"tasks":[
-    {
-      "startDate": "2021-06-11",
-      "endDate": "2021-11-15",
-      "taskName": "ModelA",
-      "status": "RUNNING",
-    },
-    {
-      "startDate": "2021-06-11",
-      "endDate": ""
-    }
-  ]
-}
+[
+  {
+    "startDate": "2021-06-11",
+    "endDate": "2021-11-15",
+    "taskName": "ModelA",
+    "status": "PLANNED"
+  }
+]

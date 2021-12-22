@@ -6,20 +6,20 @@ import Tasks from './tasks.json';
 
 const parseDates = (s: string, shift?: string): Date => {
   //var [YYYY, MM, DD] = '2014-04-03'.split('-');
-  if (shift){
+  if (shift) {
     return new Date(s + shift);
   }
   return new Date(s + 'T00:00:00');
 };
 
 // Populate planned tasks
-var tasks = Tasks.map(function(el){
+var tasks = Tasks.map(function (el) {
   return {
     startDate: parseDates(el.startDate),
     endDate: parseDates(el.endDate),
     taskName: el.taskName,
-    status: 'PLANNED'
-  }
+    status: 'PLANNED',
+  };
 });
 
 const taskStatus = {
@@ -32,9 +32,18 @@ const taskStatus = {
 };
 
 // Extract labels
-const taskNames = Tasks.map(function(el){
-  return el.taskName
+const taskNames = Tasks.map(function (el) {
+  return el.taskName;
 });
+
+tasks.sort(function (a, b) {
+  return a.endDate - b.endDate;
+});
+var maxDate = tasks[tasks.length - 1].endDate;
+tasks.sort(function (a, b) {
+  return a.startDate - b.startDate;
+});
+var minDate = tasks[0].startDate;
 
 render(
   <GanttChart

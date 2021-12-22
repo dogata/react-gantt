@@ -38,3 +38,7 @@ html,body,#wrapper {
 .bar-planned {
 	fill: darkgrey;
 }
+
+.bar-completed {
+	fill: #669900;
+}

@@ -9,6 +9,10 @@ class GanttChart extends Component {
     this.drawChart();
   }
 
+  componentDidUpdate() {
+    this.drawChart();
+  }
+
   drawChart() {
     const { tasks, taskTypes, taskStatus, tickFormat } = this.props;
     var gantt = window.d3

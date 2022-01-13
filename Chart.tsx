@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 /* eslint-disable import/first */
 window.d3 = d3;
-import 'd3-gantt-chart';
+//import 'd3-gantt-chart';
+import './gantt-chart-d3.js';
 
 class GanttChart extends Component {
   componentDidMount() {
@@ -21,19 +22,6 @@ class GanttChart extends Component {
       .taskStatus(taskStatus)
       .tickFormat(tickFormat);
     gantt(tasks);
-    const svg = d3.select('.chart'); // select plot area
-    console.log(svg.style('width'));
-    const data = [12, 5, 6, 6, 9, 10];
-    svg
-      .selectAll('rect')
-      .data(data)
-      .enter()
-      .append('rect')
-      .attr('x', (d, i) => i * 70)
-      .attr('y', (d, i) => this.props.height - 10 * d)
-      .attr('width', 65)
-      .attr('height', (d, i) => d * 10)
-      .attr('fill', 'green');
   }
 
   render() {
